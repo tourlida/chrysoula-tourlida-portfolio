@@ -8,31 +8,22 @@ import {
   useTheme,
 } from "@mui/material";
 import { useMemo } from "react";
+import Image from "next/image";
+
 const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1549388604-817d15aa0110",
-    title: "Bed",
+    imgPath: "/static/office_1.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1525097487452-6278ff080c31",
-    title: "Books",
+    imgPath: "/static/office_2.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1523413651479-597eb2da0ad6",
-    title: "Sink",
+    imgPath: "/static/office_4.jpg",
   },
   {
-    img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3",
-    title: "Kitchen",
+    imgPath: "/static/office_3.jpg",
   },
-  {
-    img: "https://images.unsplash.com/photo-1588436706487-9d55d73a39e3",
-    title: "Blinds",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1574180045827-681f8a1a9622",
-    title: "Chairs",
-  },
+  
 ];
 export default function Office() {
   const theme = useTheme();
@@ -78,11 +69,11 @@ export default function Office() {
       <Box sx={{ width:'75%', margin: "auto", height: "fit-content" }}>
         <ImageList variant="masonry" cols={3} gap={8}>
           {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
+            <ImageListItem key={item.imgPath}>
+            <img
+                src={`${item.imgPath}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.imgPath}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={'Office'}
                 loading="lazy"
               />
             </ImageListItem>

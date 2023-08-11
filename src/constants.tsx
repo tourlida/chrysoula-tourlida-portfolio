@@ -38,9 +38,9 @@ export const colorPalette = {
 };
 
 export const emailJsConfig = {
-  serviceId: "service_46i8fmj",
-  templateId: "template_0l05om4",
-  publicKey: "KpWyNuDnR6-_ldUyB",
+  serviceId: "service_gcnejqm",
+  templateId: "template_rq16gdl",
+  publicKey: "ksn1gG7FEpNVxXH13",
 };
 
 export const websiteUrl= 'https://localhost:3000'
