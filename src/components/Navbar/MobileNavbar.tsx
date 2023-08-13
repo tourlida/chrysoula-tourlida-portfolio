@@ -79,37 +79,37 @@ const MobileNavbar = ({
       <Divider />
       <List>
         {menuOptions.map((item) => (
-               <Link
-               className="btn"
-               href={
-                 typeof window !== "undefined"
-                   ? `${window.location.origin}/#${item.routePath}`
-                   : `/#${item.routePath}`
-               }
-               style={{ textDecoration: "none", color: "black" }}
-             >
-          <ListItemButton
+          <Link
             key={item.label}
-            disableRipple={true}
-            disableTouchRipple={true}
-            sx={{
-              textAlign: "center",
-              color: "black",
-              textTransform: "none",
-              backgroundColor: "transparent",
-              "&.MuiButtonBase-root": {
-                "&:hover": {
-                  background: "transparent",
-                  color: "#477B85",
-                },
-                "&:active": {
-                  background: "transparent",
-                  color: "#477B85",
-                },
-              },
-            }}
-            onClick={() => onOptionClick(item.routePath)}
+            className="btn"
+            href={
+              typeof window !== "undefined"
+                ? `${window.location.origin}/#${item.routePath}`
+                : `/#${item.routePath}`
+            }
+            style={{ textDecoration: "none", color: "black" }}
           >
+            <ListItemButton
+              disableRipple={true}
+              disableTouchRipple={true}
+              sx={{
+                textAlign: "center",
+                color: "black",
+                textTransform: "none",
+                backgroundColor: "transparent",
+                "&.MuiButtonBase-root": {
+                  "&:hover": {
+                    background: "transparent",
+                    color: "#477B85",
+                  },
+                  "&:active": {
+                    background: "transparent",
+                    color: "#477B85",
+                  },
+                },
+              }}
+              onClick={() => onOptionClick(item.routePath)}
+            >
               <Typography
                 component="div"
                 style={{
@@ -130,9 +130,8 @@ const MobileNavbar = ({
                   ></div>
                 )}
               </Typography>
-          </ListItemButton>
+            </ListItemButton>
           </Link>
-
         ))}
       </List>
     </Box>
