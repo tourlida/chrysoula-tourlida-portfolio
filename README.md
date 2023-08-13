@@ -1,6 +1,5 @@
 A portofolio for a psygologist in Greece:
 
+Built with Nextjs. Deployed on Vercel using a custom  domain name.
 
-Built with Nextjs. Deployed on Vercel.
-
-Deployment url: https://chrysoula-tourlida-portofolio-github-io-git-main-tourlida.vercel.app/
+Live site url: https://www.chrysoulatourlida.com/
