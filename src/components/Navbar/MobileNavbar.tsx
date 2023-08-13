@@ -5,7 +5,6 @@ import {
   Drawer,
   IconButton,
   List,
-  ListItem,
   ListItemButton,
   Stack,
   Toolbar,
@@ -80,6 +79,15 @@ const MobileNavbar = ({
       <Divider />
       <List>
         {menuOptions.map((item) => (
+               <Link
+               className="btn"
+               href={
+                 typeof window !== "undefined"
+                   ? `${window.location.origin}/#${item.routePath}`
+                   : `/#${item.routePath}`
+               }
+               style={{ textDecoration: "none", color: "black" }}
+             >
           <ListItemButton
             key={item.label}
             disableRipple={true}
@@ -102,15 +110,6 @@ const MobileNavbar = ({
             }}
             onClick={() => onOptionClick(item.routePath)}
           >
-            <Link
-              className="btn"
-              href={
-                typeof window !== "undefined"
-                  ? `${window.location.origin}/#${item.routePath}`
-                  : `/#${item.routePath}`
-              }
-              style={{ textDecoration: "none", color: "black" }}
-            >
               <Typography
                 component="div"
                 style={{
@@ -131,8 +130,9 @@ const MobileNavbar = ({
                   ></div>
                 )}
               </Typography>
-            </Link>
           </ListItemButton>
+          </Link>
+
         ))}
       </List>
     </Box>
