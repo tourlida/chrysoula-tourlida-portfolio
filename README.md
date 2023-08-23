@@ -1,5 +1,13 @@
-A portofolio for a psygologist in Greece:
+# 📘 Portfolio for a Psychologist in Greece
 
-Built with Nextjs. Deployed on Vercel using a custom  domain name.
+**Name**: Dr. Chrysoula Tourlida 🧠
 
-Live site url: https://www.chrysoulatourlida.com/
+## 💻 Web Development Details:
+
+- **Framework**: Next.js 🖥️
+- **Deployment**: Deployed on Vercel ☁️
+- **Domain**: Custom domain 🌐
+
+## [🔗 Live Site](https://www.chrysoulatourlida.com/)
+
+Click the link above to visit the live website.
