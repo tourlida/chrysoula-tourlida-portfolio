@@ -55,11 +55,13 @@ const StyledTextarea = styled(TextareaAutosize)(
   }
 `
 );
+
 interface FormData {
   name?: string;
   email?: string;
   message?: string;
 }
+
 export default function Contact() {
   const [formData, setFormData] = useState<FormData | null>(null);
   const form = useRef(null);
@@ -76,17 +78,12 @@ export default function Contact() {
   const validateEmail = useCallback((email?: string | null) => {
     let validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (email && email.toLowerCase().match(validRegex) != null) {
-      return true;
-    } else {
-      return false;
-    }
+    return email && email.toLowerCase().match(validRegex) != null;
   }, []);
 
   const handleSubmit = useCallback(
     (e: any) => {
       e.preventDefault();
-      //Check if the email is valid
       const isEmailValid = validateEmail(formData?.email);
 
       setEmailError(false);
@@ -95,7 +92,7 @@ export default function Contact() {
       if (!validateEmail(formData?.email)) {
         setEmailError(true);
       }
-      if (formData?.name == "") {
+      if (formData?.name === "") {
         setNameError(true);
       }
 
@@ -137,7 +134,6 @@ export default function Contact() {
       if (reason === "clickaway") {
         return;
       }
-
       setIsErrorMsg(false);
       setNotificationMessage(null);
     },
@@ -146,7 +142,6 @@ export default function Contact() {
 
   const handleOnFormFieldChange = useCallback(
     (keyToBeUpdated: string, value: string) => {
-      //Check email validation on the fly
       if (keyToBeUpdated === "email") {
         let isValidEmail = validateEmail(value);
         let debounceTimer;
@@ -156,7 +151,6 @@ export default function Contact() {
           1000
         );
       }
-
       setFormData({
         ...formData,
         [keyToBeUpdated]: value,
@@ -167,128 +161,124 @@ export default function Contact() {
 
   const isNotificationOpen = notificationMessage !== null;
 
-  const titleEl = useMemo(() => {
-    return (
-      <Stack justifyContent="center" alignItems="center" mb="32px">
-        <Typography
-          component="div"
-          sx={{
-            width: "100%",
-            textAlign: "center",
-            fontWeight: 300,
-            fontSize: isMobile ? "32px" : "36px",
-          }}
-          variant="h4"
-        >
-          Eπικοινωνία{" "}
-        </Typography>
-        <div
-          style={{
-            marginTop: "16px",
-            height: "4px",
-            width: "262px",
-            background:
-              "linear-gradient(90deg, rgba(111,168,184,1) 0%, rgba(61,114,128,1) 100%)",
-          }}
-        ></div>
-      </Stack>
-    );
-  }, [isMobile]);
-
-  const col2 = useMemo(() => {
-    return (
-      <Grid
-        container
-        spacing={2}
+  const titleEl = useMemo(() => (
+    <Stack justifyContent="center" alignItems="center" mb="32px">
+      <Typography
+        component="div"
         sx={{
-          "&.MuiGrid-root": {
-            padding: "36px 0",
-            width: "100%",
-            marginLeft: isMobile ? "0" : "-16px",
-            margin: isMobile ? "0" : "unset",
-          },
+          width: "100%",
+          textAlign: "center",
+          fontWeight: 300,
+          fontSize: isMobile ? "32px" : "36px",
+          color: colorPalette.main, 
+        }}
+        variant="h4"
+        id="contact-title"
+      >
+        Επικοινωνία{" "}
+      </Typography>
+      <div
+        style={{
+          marginTop: "16px",
+          height: "4px",
+          width: "262px",
+          background:
+            "linear-gradient(90deg, rgba(111,168,184,1) 0%, rgba(61,114,128,1) 100%)",
+        }}
+      ></div>
+    </Stack>
+  ), [isMobile]);
+
+  const col2 = useMemo(() => (
+    <Grid
+      container
+      spacing={2}
+      sx={{
+        "&.MuiGrid-root": {
+          padding: "36px 0",
+          width: "100%",
+          marginLeft: isMobile ? "0" : "-16px",
+          margin: isMobile ? "0" : "unset",
+        },
+      }}
+    >
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        sx={{
+          padding: "0 !important",
         }}
       >
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          sx={{
-            padding: "0 !important",
+        <div
+          style={{
+            display: "flex",
+            width: isMobile ? "100%" : "90%",
+            margin: "auto",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              width: isMobile ? "100%" : "90%",
-              margin: "auto",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {serviceInfoData.map((serviceItem, idx) => {
-              return (
-                <div
-                  style={{
-                    width: isMobile ? "100%" : "50%",
-                    minWidth: "300px",
-                  }}
-                  key={`contact-card-${idx}`}
-                >
-                  <Stack
+          {serviceInfoData.map((serviceItem, idx) => (
+            <div
+              style={{
+                width: isMobile ? "100%" : "50%",
+                minWidth: "300px",
+              }}
+              key={`contact-card-${idx}`}
+            >
+              <Stack
+                style={{
+                  margin: "8px 0px",
+                  width: "300px",
+                  minWidth: "300px",
+                  height: "96px",
+                }}
+              >
+                <Stack direction="row" alignItems="flex-start">
+                  <div
                     style={{
-                      margin: "8px 0px",
-                      width: "300px",
-                      minWidth: "300px",
-                      height: "96px",
+                      height: isMobile ? "24px" : "30px",
+                      width: isMobile ? "24px" : "30px",
+                      position: "relative",
+                      top: isMobile ? "2px" : "4px",
                     }}
                   >
-                    <Stack direction="row" alignItems="flex-start">
-                      <div
-                        style={{
-                          height: isMobile ? "24px" : "30px",
-                          width: isMobile ? "24px" : "30px",
-                          position: "relative",
-                          top: isMobile ? "2px" : "4px",
-                        }}
-                      >
-                        {serviceItem.icon}
-                      </div>
-                      <Stack sx={{ ml: "8px" }}>
-                        <Typography
-                          component="div"
-                          variant="subtitle1"
-                          sx={{
-                            color: "black",
-                            opacity: 0.7,
-                            fontSize: isMobile ? "15px" : "19px",
-                          }}
-                        >
-                          {serviceItem.title}
-                        </Typography>
-                        {serviceItem.value}
-                      </Stack>
-                    </Stack>
+                    {serviceItem.icon}
+                  </div>
+                  <Stack sx={{ ml: "8px" }}>
+                    <Typography
+                      component="div"
+                      variant="subtitle1"
+                      sx={{
+                        color: colorPalette.main, 
+                        opacity: 0.9, // Adjust opacity for better readability
+                        fontSize: isMobile ? "15px" : "19px",
+                      }}
+                    >
+                      {serviceItem.title}
+                    </Typography>
+                    {serviceItem.value}
                   </Stack>
-                </div>
-              );
-            })}
-
-            <div
-              style={{ height: "424px", width: "100%", marginBottom: "16px" }}
-              aria-label="Χάρτης"
-              role="region"
-            >
-              <MapWithNoSSR />
+                </Stack>
+              </Stack>
             </div>
+          ))}
+
+          <div
+            style={{ height: "424px", width: "100%", marginBottom: "16px" }}
+            aria-label="Χάρτης"
+            role="region"
+          >
+            <MapWithNoSSR />
           </div>
-        </Grid>
+        </div>
       </Grid>
-    );
-  }, [isMobile]);
+    </Grid>
+  ), [isMobile]);
 
   return (
     <section
@@ -332,7 +322,7 @@ export default function Contact() {
             style={{
               height: "100%",
               padding: "36px 48px",
-              boxShadow: " 4px 5px 58px -1px rgba(0,0,0,0.22)",
+              boxShadow: "4px 5px 58px -1px rgba(0,0,0,0.22)",
               borderRadius: "4px",
               maxWidth: "450px",
               minWidth: "200px",
@@ -350,7 +340,7 @@ export default function Contact() {
                 sx={{
                   mb: 1,
                   width: "100%",
-                  color: colorPalette.main,
+                  color: colorPalette.main, // Ensure good contrast
                   fontSize: isMobile ? "19px" : "24px",
                   textWrap: "nowrap",
                 }}
@@ -362,7 +352,7 @@ export default function Contact() {
                 component="div"
                 variant="caption"
                 sx={{
-                  opacity: "0.5",
+                  opacity: "0.7", // Adjust opacity for better readability
                   mb: 6,
                   fontSize: isMobile ? "13px" : "16px",
                 }}
@@ -445,7 +435,7 @@ export default function Contact() {
                   maxWidth: "250px",
                   borderRadius: "16px",
                   padding: "8px",
-                  backgroundColor: colorPalette.main,
+                  backgroundColor: colorPalette.main, 
                   "&:hover": {
                     backgroundColor: "#3D717E",
                   },
