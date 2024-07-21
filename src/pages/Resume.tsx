@@ -52,7 +52,6 @@ export default function Resume() {
         padding: "64px 0",
       }}
       aria-labelledby="resume-title"
-      role="region"
     >
       {titleEl}
       <Grid

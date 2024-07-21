@@ -68,7 +68,6 @@ export default function Office() {
         margin: "auto",
       }}
       aria-labelledby="office-title"
-      role="region"
     >
       {titleEl}
       <Box sx={{ width: "75%", margin: "auto", height: "fit-content" }}>

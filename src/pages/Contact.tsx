@@ -300,7 +300,6 @@ export default function Contact() {
         padding: isMobile ? "64px 0px 0px 0px" : "64px 0 24px 0px",
       }}
       aria-labelledby="contact-title"
-      role="region"
     >
       {titleEl}
       <Grid

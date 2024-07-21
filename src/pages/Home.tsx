@@ -16,7 +16,6 @@ export default function Home() {
         border: 0,
       }}
       aria-labelledby="home-title"
-      role="region"
     >
       <div
         style={{

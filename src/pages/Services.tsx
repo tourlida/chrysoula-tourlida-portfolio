@@ -154,7 +154,6 @@ export default function Services() {
         marginBottom: "32px",
       }}
       aria-labelledby="services-title"
-      role="region"
     >
       {titleEl}
       <Grid
