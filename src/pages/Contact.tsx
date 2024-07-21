@@ -416,7 +416,8 @@ export default function Contact() {
                 aria-errormessage={emailError ? "email-error" : undefined}
               />
               <StyledTextarea
-                aria-label="minimum height"
+                required
+                aria-label="Μήνυμα"
                 minRows={1}
                 maxRows={2}
                 placeholder="Παρακαλώ πληκτρολογήστε το μήνυμα σας"
