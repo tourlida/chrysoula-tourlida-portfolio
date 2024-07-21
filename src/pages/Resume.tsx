@@ -99,7 +99,7 @@ export default function Resume() {
                 borderRadius: "4px",
                 width: "unset",
               }}
-              alt="Picture of the psychologist"
+              alt="Εικόνα του ψυχολόγου"
             />
 
             <Stack className="bottom-right-corner" alignItems="flex-end">

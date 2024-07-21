@@ -70,7 +70,7 @@ export default function Office() {
     >
       {titleEl}
       <Box sx={{ width: "75%", margin: "auto", height: "fit-content" }}>
-        <ImageList variant="masonry" cols={3} gap={8} aria-label="Office images">
+        <ImageList variant="masonry" cols={3} gap={8} aria-label="Εικόνες γραφείου">
           {itemData.map((item, idx) => (
             <ImageListItem key={item.imgPath}>
               <Image
@@ -79,7 +79,7 @@ export default function Office() {
                 width={248}
                 layout="responsive"
                 quality={100}
-                alt={`Office image ${idx + 1}`}
+                alt={`Εικόνα γραφείου ${idx + 1}`}
                 loading="lazy"
               />
             </ImageListItem>
