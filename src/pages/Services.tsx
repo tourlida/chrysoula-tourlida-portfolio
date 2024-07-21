@@ -125,6 +125,7 @@ export default function Services() {
             fontSize: isMobile ? '32px' : '36px'
           }}
           id="services-title"
+          role="heading"
         >
           Υπηρεσίες
         </Typography>

@@ -24,6 +24,7 @@ export default function Resume() {
             fontSize: isMobile ? "32px" : "36px",
           }}
           id="resume-title"
+          role="heading"
         >
           Βιογραφικό
         </Typography>

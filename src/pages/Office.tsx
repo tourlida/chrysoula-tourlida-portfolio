@@ -40,6 +40,7 @@ export default function Office() {
             fontSize: isMobile ? "32px" : "36px",
           }}
           id="office-title"
+          role="heading"
         >
           Το Ιατρείο μας
         </Typography>
