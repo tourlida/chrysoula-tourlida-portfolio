@@ -367,7 +367,7 @@ export default function Contact() {
                 onChange={(e) =>
                   handleOnFormFieldChange("name", e.target.value)
                 }
-                required
+                required={true}
                 aria-required="true"
                 variant="outlined"
                 color="secondary"
@@ -388,7 +388,7 @@ export default function Contact() {
                 onChange={(e) =>
                   handleOnFormFieldChange("email", e.target.value)
                 }
-                required
+                required={true}
                 aria-required="true"
                 variant="outlined"
                 color="secondary"
