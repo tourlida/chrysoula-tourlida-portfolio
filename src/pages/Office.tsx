@@ -69,7 +69,7 @@ export default function Office() {
       {titleEl}
       <Box sx={{ width: "75%", margin: "auto", height: "fit-content" }}>
         <ImageList variant="masonry" cols={3} gap={8}>
-          {itemData.map((item) => (
+          {itemData.map((item,idx) => (
             <ImageListItem key={item.imgPath}>
               <Image
                 src={item.imgPath}
@@ -77,7 +77,7 @@ export default function Office() {
                 width={248}
                 layout="responsive"
                 quality={100}
-                alt={"Office"}
+                alt={`Office image ${idx}`}
                 loading="lazy"
               />
             </ImageListItem>

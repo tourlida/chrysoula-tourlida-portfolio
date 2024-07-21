@@ -373,6 +373,7 @@ export default function Contact() {
                   handleOnFormFieldChange("name", e.target.value)
                 }
                 required
+                aria-required="true"
                 variant="outlined"
                 color="secondary"
                 type="text"
@@ -391,6 +392,7 @@ export default function Contact() {
                   handleOnFormFieldChange("email", e.target.value)
                 }
                 required
+                aria-required="true"
                 variant="outlined"
                 color="secondary"
                 type="email"
@@ -425,6 +427,7 @@ export default function Contact() {
                 variant="contained"
                 endIcon={<SendIcon />}
                 onClick={handleSubmit}
+                role="button"
                 sx={{
                   minWidth: "200px",
                   maxWidth: "250px",
