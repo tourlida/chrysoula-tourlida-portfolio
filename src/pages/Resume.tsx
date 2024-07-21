@@ -23,7 +23,6 @@ export default function Resume() {
             fontWeight: 300,
             fontSize: isMobile ? "32px" : "36px",
           }}
-          variant="h4"
           id="resume-title"
         >
           Βιογραφικό

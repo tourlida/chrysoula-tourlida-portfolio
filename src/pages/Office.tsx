@@ -39,7 +39,6 @@ export default function Office() {
             fontWeight: 300,
             fontSize: isMobile ? "32px" : "36px",
           }}
-          variant="h4"
           id="office-title"
         >
           Το Ιατρείο μας

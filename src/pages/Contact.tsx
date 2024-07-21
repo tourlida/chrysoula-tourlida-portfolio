@@ -170,9 +170,7 @@ export default function Contact() {
           textAlign: "center",
           fontWeight: 300,
           fontSize: isMobile ? "32px" : "36px",
-          color: colorPalette.main, 
         }}
-        variant="h4"
         id="contact-title"
       >
         Επικοινωνία{" "}
@@ -336,7 +334,6 @@ export default function Contact() {
             >
               <Typography
                 component="div"
-                variant="h4"
                 sx={{
                   mb: 1,
                   width: "100%",

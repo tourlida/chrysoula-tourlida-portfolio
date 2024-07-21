@@ -124,7 +124,6 @@ export default function Services() {
             fontWeight: 300,
             fontSize: isMobile ? '32px' : '36px'
           }}
-          variant="h4"
           id="services-title"
         >
           Υπηρεσίες
