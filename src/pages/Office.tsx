@@ -33,7 +33,6 @@ export default function Office() {
     return (
       <Stack justifyContent="center" alignItems="center" mb="32px">
         <Typography
-          component="h1"
           sx={{
             width: "100%",
             textAlign: "center",
