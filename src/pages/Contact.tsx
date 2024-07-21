@@ -424,6 +424,7 @@ export default function Contact() {
               />
 
               <Button
+                aria-label="Αποστολή"
                 variant="contained"
                 endIcon={<SendIcon />}
                 onClick={handleSubmit}
@@ -442,7 +443,7 @@ export default function Contact() {
                   },
                 }}
               >
-                Αποστολη
+                Αποστολή
               </Button>
             </Stack>
           </form>

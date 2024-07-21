@@ -10,6 +10,7 @@ export default function DesktopNavbar({
 }: NavbarProps) {
   const logoEl = (
     <Link
+      aria-label= "Επιστροφή στην αρχική σελίδα"
       className="btn"
       href={
         typeof window !== "undefined"
@@ -82,6 +83,7 @@ export default function DesktopNavbar({
             >
               <Link
                 className="btn"
+                aria-label= "Επιστροφή στην αρχική σελίδα"
                 href={
                   typeof window !== "undefined"
                     ? `${window.location.origin}/#${item.routePath}`

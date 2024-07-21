@@ -33,6 +33,7 @@ const MobileNavbar = ({
   const logoEl = (
     <Link
       className="btn"
+      aria-label= "Επιστροφή στην αρχική σελίδα"
       href={
         typeof window !== "undefined"
           ? `${window.location.origin}/#home`
@@ -82,6 +83,7 @@ const MobileNavbar = ({
           <Link
             key={item.label}
             className="btn"
+            aria-label= "Επιστροφή στην αρχική σελίδα"
             href={
               typeof window !== "undefined"
                 ? `${window.location.origin}/#${item.routePath}`
