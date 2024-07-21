@@ -455,7 +455,7 @@ export default function Contact() {
                   },
                 }}
               >
-                Αποστολή
+                ΑΠΟΣΤΟΛΗ
               </Button>
             </Stack>
           </form>
