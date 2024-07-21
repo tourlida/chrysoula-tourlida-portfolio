@@ -365,11 +365,14 @@ export default function Contact() {
                   handleOnFormFieldChange("name", e.target.value)
                 }
                 required={true}
-                aria-required="true"
                 variant="outlined"
                 color="secondary"
                 type="text"
-                inputProps={{ style: { fontSize: isMobile ? "15px" : "18px" } }}
+                inputProps={{ style: { fontSize: isMobile ? "15px" : "18px" },
+              "aria-required": "true",
+              "aria-invalid": nameError,
+              "aria-errormessage":nameError ? "name-error" : undefined
+              }}
                 sx={{
                   mb: 3,
                 }}
@@ -377,8 +380,6 @@ export default function Contact() {
                 value={formData?.name ?? ""}
                 name="name"
                 error={nameError}
-                aria-invalid={nameError}
-                aria-errormessage={nameError ? "name-error" : undefined}
               />
               <TextField
                 label="Email"
@@ -386,20 +387,20 @@ export default function Contact() {
                   handleOnFormFieldChange("email", e.target.value)
                 }
                 required={true}
-                aria-required="true"
                 variant="outlined"
                 color="secondary"
                 type="email"
                 name="email"
-                inputProps={{ style: { fontSize: isMobile ? "15px" : "18px" } }}
+                inputProps={{ style: { fontSize: isMobile ? "15px" : "18px" },     
+                 "aria-required": "true",
+                "aria-invalid": emailError,
+                "aria-errormessage":emailError ? "email-error" : undefined }}
                 sx={{
                   mb: 3,
                 }}
                 fullWidth
                 value={formData?.email ?? ""}
                 error={emailError}
-                aria-invalid={emailError}
-                aria-errormessage={emailError ? "email-error" : undefined}
               />
               <StyledTextarea
                 required
