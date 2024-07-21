@@ -42,6 +42,7 @@ export default function CustomMap() {
         }
         }}
         onClick={handleGetDirectionOnGoogleMaps}
+        aria-label="Οδηγίες στο Google Maps"
       >
         <DirectionsIcon />
       </IconButton>
