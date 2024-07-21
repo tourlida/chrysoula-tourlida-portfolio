@@ -24,6 +24,7 @@ const itemData = [
     imgPath: "/static/office_3.jpg",
   },
 ];
+
 export default function Office() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -32,7 +33,7 @@ export default function Office() {
     return (
       <Stack justifyContent="center" alignItems="center" mb="32px">
         <Typography
-          component="div"
+          component="h1"
           sx={{
             width: "100%",
             textAlign: "center",
@@ -40,8 +41,9 @@ export default function Office() {
             fontSize: isMobile ? "32px" : "36px",
           }}
           variant="h4"
+          id="office-title"
         >
-          Το Ιατρείο μας{" "}
+          Το Ιατρείο μας
         </Typography>
         <div
           style={{
@@ -65,11 +67,13 @@ export default function Office() {
         padding: "64px 0",
         margin: "auto",
       }}
+      aria-labelledby="office-title"
+      role="region"
     >
       {titleEl}
       <Box sx={{ width: "75%", margin: "auto", height: "fit-content" }}>
-        <ImageList variant="masonry" cols={3} gap={8}>
-          {itemData.map((item,idx) => (
+        <ImageList variant="masonry" cols={3} gap={8} aria-label="Office images">
+          {itemData.map((item, idx) => (
             <ImageListItem key={item.imgPath}>
               <Image
                 src={item.imgPath}
@@ -77,7 +81,7 @@ export default function Office() {
                 width={248}
                 layout="responsive"
                 quality={100}
-                alt={`Office image ${idx}`}
+                alt={`Office image ${idx + 1}`}
                 loading="lazy"
               />
             </ImageListItem>

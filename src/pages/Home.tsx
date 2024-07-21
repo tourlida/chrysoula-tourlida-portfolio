@@ -1,4 +1,4 @@
-import {useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 export default function Home() {
   const theme = useTheme();
@@ -15,14 +15,16 @@ export default function Home() {
         paddingBottom: 0,
         border: 0,
       }}
+      aria-labelledby="home-title"
+      role="region"
     >
       <div
         style={{
           backgroundColor: "green",
-          background: `   linear-gradient(
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)
-      ),url(${backgroundImg})`,
+          background: `linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),url(${backgroundImg})`,
           height: isMobile ? "156px" : "287px",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -32,20 +34,34 @@ export default function Home() {
           justifyContent: "center",
           alignItems: "center",
         }}
+        aria-label="Background Image with Title and Subtitle"
       >
-        <div style={{ top: "45%", position:'absolute', color:'white',textAlign:'center'  }}>
+        <div
+          style={{
+            top: "45%",
+            position: "absolute",
+            color: "white",
+            textAlign: "center",
+          }}
+          aria-labelledby="home-title home-subtitle"
+        >
           <h1
+            id="home-title"
             style={{
               fontWeight: 400,
               fontSize: isMobile ? "16px" : "32px",
               margin: 0,
             }}
           >
-            {" "}
             ΧΡΥΣOΥΛΑ ΑΝΑΡΓ. ΤΟΥΡΛΙΔΑ
           </h1>
-          <p style={{ fontWeight: 200, fontSize: isMobile ? "14px" : "21px" }}>
-            {" "}
+          <p
+            id="home-subtitle"
+            style={{
+              fontWeight: 200,
+              fontSize: isMobile ? "14px" : "21px",
+            }}
+          >
             ΨΥΧΟΛΟΓΟΣ - ΓΝΩΣΙΑΚΗ ΣΥΜΠΕΡΙΦΟΡΙΚΗ ΨΥΧΟΘΕΡΑΠΕΥΤΡΙΑ
           </p>
         </div>

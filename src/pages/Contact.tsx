@@ -13,7 +13,6 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 import emailjs from "@emailjs/browser";
-
 import {
   blue,
   colorPalette,
@@ -280,6 +279,8 @@ export default function Contact() {
 
             <div
               style={{ height: "424px", width: "100%", marginBottom: "16px" }}
+              aria-label="Χάρτης"
+              role="region"
             >
               <MapWithNoSSR />
             </div>
@@ -298,6 +299,8 @@ export default function Contact() {
         border: 0,
         padding: isMobile ? "64px 0px 0px 0px" : "64px 0 24px 0px",
       }}
+      aria-labelledby="contact-title"
+      role="region"
     >
       {titleEl}
       <Grid
@@ -335,6 +338,7 @@ export default function Contact() {
               maxWidth: "450px",
               minWidth: "200px",
             }}
+            aria-describedby="form-description"
           >
             <Stack
               sx={{
@@ -351,6 +355,7 @@ export default function Contact() {
                   fontSize: isMobile ? "19px" : "24px",
                   textWrap: "nowrap",
                 }}
+                id="form-title"
               >
                 Στείλτε μας ένα μήνυμα
               </Typography>
@@ -362,6 +367,7 @@ export default function Contact() {
                   mb: 6,
                   fontSize: isMobile ? "13px" : "16px",
                 }}
+                id="form-description"
               >
                 Μη διστάσετε να επικοινωνήσετε μαζί μας εάν έχετε οποιαδήποτε
                 περαιτέρω ερώτηση ή ανησυχία ή θέλετε να κλείσετε ένα ραντεβού
@@ -385,6 +391,8 @@ export default function Contact() {
                 value={formData?.name ?? ""}
                 name="name"
                 error={nameError}
+                aria-invalid={nameError}
+                aria-errormessage={nameError ? "name-error" : undefined}
               />
               <TextField
                 label="Email"
@@ -404,6 +412,8 @@ export default function Contact() {
                 fullWidth
                 value={formData?.email ?? ""}
                 error={emailError}
+                aria-invalid={emailError}
+                aria-errormessage={emailError ? "email-error" : undefined}
               />
               <StyledTextarea
                 aria-label="minimum height"
@@ -421,6 +431,7 @@ export default function Contact() {
                   maxHeight: "250px",
                 }}
                 name="message"
+                aria-required="true"
               />
 
               <Button
@@ -467,8 +478,9 @@ export default function Contact() {
         autoHideDuration={2000}
         onClose={handleClose}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        role="alert"
       >
-        <Alert severity={isErrorMsg ? "error" : "success"}>
+        <Alert severity={isErrorMsg ? "error" : "success"} role="alert">
           {notificationMessage}
         </Alert>
       </Snackbar>

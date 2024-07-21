@@ -8,37 +8,39 @@ import {
 import Image from "next/image";
 import { useMemo } from "react";
 
-
 export default function Resume() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const backgroundImg = "/static/me.jpg";
 
-  const titleEl = useMemo(()=>{
-    return <Stack justifyContent="center" alignItems="center" mb="32px">
-    <Typography
-      component="div"
-      sx={{
-        width: "100%",
-        textAlign: "center",
-        fontWeight: 300,
-        fontSize : isMobile ? '32px' : '36px'
-      }}
-      variant="h4"
-    >
-      Βιογραφικό{" "}
-    </Typography>
-    <div
-      style={{
-        marginTop:'16px',
-       height: "4px",
-        width: "212px",
-        background:
-          "linear-gradient(90deg, rgba(111,168,184,1) 0%, rgba(61,114,128,1) 100%)",
-      }}
-    ></div>
-  </Stack>
-  },[isMobile]);
+  const titleEl = useMemo(() => {
+    return (
+      <Stack justifyContent="center" alignItems="center" mb="32px">
+        <Typography
+          component="h1"
+          sx={{
+            width: "100%",
+            textAlign: "center",
+            fontWeight: 300,
+            fontSize: isMobile ? "32px" : "36px",
+          }}
+          variant="h4"
+          id="resume-title"
+        >
+          Βιογραφικό
+        </Typography>
+        <div
+          style={{
+            marginTop: "16px",
+            height: "4px",
+            width: "212px",
+            background:
+              "linear-gradient(90deg, rgba(111,168,184,1) 0%, rgba(61,114,128,1) 100%)",
+          }}
+        ></div>
+      </Stack>
+    );
+  }, [isMobile]);
 
   return (
     <section
@@ -49,8 +51,10 @@ export default function Resume() {
         width: "100%",
         padding: "64px 0",
       }}
+      aria-labelledby="resume-title"
+      role="region"
     >
-     {titleEl}
+      {titleEl}
       <Grid
         container
         spacing={2}
@@ -97,7 +101,7 @@ export default function Resume() {
                 borderRadius: "4px",
                 width: "unset",
               }}
-              alt="Picture of the psygologist"
+              alt="Picture of the psychologist"
             />
 
             <Stack className="bottom-right-corner" alignItems="flex-end">
@@ -122,13 +126,13 @@ export default function Resume() {
         </Grid>
         <Grid item xs={12} sm={12} md={8} lg={8}>
           <Typography
-            component="div"
+            component="p"
             variant="body2"
             sx={{
               mb: "16px",
               fontWeight: 300,
               fontSize: isMobile ? "15px" : "18px",
-              letterSpacing:'0.039em'
+              letterSpacing: '0.039em'
             }}
           >
             Ως πιστοποιημένη Ψυχολόγος και Γνωσιακή Συμπεριφορική
@@ -138,13 +142,13 @@ export default function Resume() {
             σπουδών στο Τμήμα Ψυχολογίας του Παντείου Πανεπιστημίου.
           </Typography>
           <Typography
-            component="div"
+            component="p"
             variant="body2"
             sx={{
               mb: "16px",
               fontWeight: 300,
               fontSize: isMobile ? "15px" : "19px",
-              letterSpacing:'0.039em'
+              letterSpacing: '0.039em'
             }}
           >
             Η επιδίωξη εξειδίκευσης με οδήγησε στην παρακολούθηση του ετήσιου
@@ -153,16 +157,16 @@ export default function Resume() {
             στο Ινστιτούτο Ανάπτυξης Απασχόλησης. Για περαιτέρω εξειδίκευση,
             ολοκλήρωσα διετή κατάρτιση στη Γνωσιακή και Συμπεριφορική
             Ψυχοθεραπεία στο Κέντρο Εφαρμοσμένης Ψυχοθεραπείας και
-            Συμβουλευτικής (ΚΕ.ΨΥ.ΣΥ).{" "}
+            Συμβουλευτικής (ΚΕ.ΨΥ.ΣΥ).
           </Typography>
           <Typography
-            component="div"
+            component="p"
             variant="body2"
             sx={{
               mb: "16px",
               fontWeight: 300,
               fontSize: isMobile ? "15px" : "19px",
-              letterSpacing:'0.039em'
+              letterSpacing: '0.039em'
             }}
           >
             Πραγματοποιώ τη θεραπευτική μου εργασία τόσο στον ιδιωτικό μου χώρο,
