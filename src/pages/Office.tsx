@@ -37,16 +37,7 @@ const itemData = [
   },
   {
     imgPath: "/static/office_8.jpg",
-  },
-  {
-    imgPath: "/static/office_9.jpg",
-  },
-  {
-    imgPath: "/static/office_10.jpg",
-  },
-  {
-    imgPath: "/static/office_11.jpg",
-  },
+  }
 ];
 
 export default function Office() {
@@ -101,7 +92,10 @@ export default function Office() {
                 src={item.imgPath}
                 height={248}
                 width={248}
-                layout="responsive"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
                 quality={100}
                 alt={`Εικόνα γραφείου ${idx + 1}`}
                 loading="lazy"
