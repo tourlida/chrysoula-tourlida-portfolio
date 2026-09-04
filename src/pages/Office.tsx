@@ -24,19 +24,19 @@ const itemData = [
     imgPath: "/static/office_3.jpg",
   },
   {
-    imgPath: "/static/office_4.jpg",
-  },
-  {
     imgPath: "/static/office_5.jpg",
   },
-    {
+  {
     imgPath: "/static/office_6.jpg",
   },
-  {
+    {
     imgPath: "/static/office_7.jpg",
   },
   {
     imgPath: "/static/office_8.jpg",
+  },
+  {
+    imgPath: "/static/office_9.jpg",
   }
 ];
 
