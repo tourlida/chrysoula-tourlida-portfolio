@@ -12,7 +12,7 @@ export function ChangeView({ coords }: any) {
 }
 
 export default function CustomMap() {
-  const [geoData, setGeoData] = useState({ lat: 37.9887, lng: 23.7638 });
+  const [geoData, setGeoData] = useState({ lat: 37.9476, lng: 23.7404 });
   const center = { lat: geoData.lat, lng: geoData.lng };
 
   const handleGetDirectionOnGoogleMaps = useCallback(() => {

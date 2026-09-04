@@ -157,7 +157,7 @@ export const serviceInfoData = [
         variant="body2"
         sx={{ opacity: 0.5, fontSize: "14px" }}
       >
-        Σεβαστουπόλεως 114 , Αμπελόκηποι 115 26
+        Κυμοθόης 54,Δάφνη
       </Typography>
     ),
   },
